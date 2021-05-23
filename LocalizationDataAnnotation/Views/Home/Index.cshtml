@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<p>ユーザー作成画面に遷移します。リンクごとに選択した言語で表示できます。</p>
+<ul>
+	<li><a asp-action="Create">Create</a></li>
+	<li><a asp-action="Create" asp-route-culture="ja">Create (ja)</a></li>
+	<li><a asp-action="Create" asp-route-culture="en">Create (en)</a></li>
+	<li><a asp-action="Create" asp-route-culture="es">Create (es)</a></li>
+</ul>

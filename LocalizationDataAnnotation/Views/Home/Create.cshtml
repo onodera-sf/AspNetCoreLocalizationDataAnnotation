@@ -1,0 +1,167 @@
+﻿@model LocalizationDataAnnotation.Models.UserViewModel
+@using System.Globalization;
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>UserViewModel</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create" enctype="multipart/form-data" >
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="ID" class="control-label"></label>
+				<input asp-for="ID" class="form-control" />
+				<span asp-validation-for="ID" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Name" class="control-label"></label>
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" class="form-control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ConfirmPassword" class="control-label"></label>
+				<input asp-for="ConfirmPassword" class="form-control" />
+				<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Email" class="control-label"></label>
+				<input asp-for="Email" class="form-control" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Age" class="control-label"></label>
+				<input asp-for="Age" class="form-control" />
+				<span asp-validation-for="Age" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Gender"></label>
+				<div>
+					<label><input type="radio" asp-for="Gender" value="@(GenderType.None)" />@(GenderType.None)</label>
+					<label><input type="radio" asp-for="Gender" value="@(GenderType.Man)" />@(GenderType.Man)</label>
+					<label><input type="radio" asp-for="Gender" value="@(GenderType.Woman)" />@(GenderType.Woman)</label>
+				</div>
+				<span asp-validation-for="Gender" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Birthday" class="control-label"></label>
+				<input asp-for="Birthday" class="form-control" />
+				<span asp-validation-for="Birthday" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Phone" class="control-label"></label>
+				<input asp-for="Phone" class="form-control" />
+				<span asp-validation-for="Phone" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="PostalCode" class="control-label"></label>
+				<input asp-for="PostalCode" class="form-control" />
+				<span asp-validation-for="PostalCode" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="CreditCard" class="control-label"></label>
+				<input asp-for="CreditCard" class="form-control" />
+				<span asp-validation-for="CreditCard" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Money" class="control-label"></label>
+				<input asp-for="Money" class="form-control" />
+				<span asp-validation-for="Money" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="StartDateTime" class="control-label"></label>
+				<input asp-for="StartDateTime" class="form-control" />
+				<span asp-validation-for="StartDateTime" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="WakeUpTime" class="control-label"></label>
+				<input asp-for="WakeUpTime" class="form-control" />
+				<span asp-validation-for="WakeUpTime" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Homepage" class="control-label"></label>
+				<input asp-for="Homepage" class="form-control" />
+				<span asp-validation-for="Homepage" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MyImage" class="control-label"></label>
+				<input asp-for="MyImage" class="form-control" />
+				<span asp-validation-for="MyImage" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MyColor" class="control-label"></label>
+				<input asp-for="MyColor" class="form-control" type="color" />
+				<span asp-validation-for="MyColor" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="WorkingDays" class="control-label"></label>
+				<select asp-for="WorkingDays" class="form-control" asp-items="@((IEnumerable<SelectListItem>)ViewData["DayOfWeeks"])" multiple></select>
+				<span asp-validation-for="WorkingDays" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="VacationDay" class="control-label"></label>
+				<select asp-for="VacationDay" class="form-control" asp-items="@((IEnumerable<SelectListItem>)ViewData["DayOfWeeks"])" multiple></select>
+				<span asp-validation-for="VacationDay" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Comment" class="control-label"></label>
+				<textarea asp-for="Comment" class="form-control"></textarea>
+				<span asp-validation-for="Comment" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="FileName" class="control-label"></label>
+				<input asp-for="FileName" class="form-control" />
+				<span asp-validation-for="FileName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UploadFile" class="control-label"></label>
+				<input asp-for="UploadFile" type="file" multiple />
+				<span asp-validation-for="UploadFile" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Month" class="control-label"></label>
+				<input asp-for="Month" class="form-control" type="month" />
+				<span asp-validation-for="Month" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Search" class="control-label"></label>
+				<input asp-for="Search" class="form-control" type="search" />
+				<span asp-validation-for="Search" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Range" class="control-label"></label>
+				<input asp-for="Range" class="form-control" type="range" min="10" max="100" />
+				<span asp-validation-for="Range" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Week" class="control-label"></label>
+				<input asp-for="Week" class="form-control" type="week" />
+				<span asp-validation-for="Week" class="text-danger"></span>
+			</div>
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" asp-for="IsAccepted" /> @Html.DisplayNameFor(model => model.IsAccepted)
+				</label>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" asp-route-culture="@CultureInfo.CurrentCulture.Name" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
